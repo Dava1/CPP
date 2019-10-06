@@ -1,0 +1,5 @@
+﻿  oracleCisla.c
+c:\users\acer\source\repos\cvicka2\cvicka2\oraclecisla.c(10): warning C4474: "scanf_s" : для строки формата передано слишком много аргументов
+  c:\users\acer\source\repos\cvicka2\cvicka2\oraclecisla.c(10): note: заполнители и их параметры ожидают переменное число аргументов в количестве 0, но было предоставлено 1
+c:\users\acer\source\repos\cvicka2\cvicka2\oraclecisla.c(23): warning C4477: "scanf_s": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "1" имеет тип "int"
+c:\users\acer\source\repos\cvicka2\cvicka2\oraclecisla.c(10): error C4700: использована неинициализированная локальная переменная "userNumber"
