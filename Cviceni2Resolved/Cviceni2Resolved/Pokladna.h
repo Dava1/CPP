@@ -1,61 +1,59 @@
 #ifndef POKLADNA_H
 #define POKLADNA_H
 #include "Uctenka.h"
-#include <stdlib.h>
-#include <stdio.h>
+
 #pragma once
+
 class Pokladna
 {
-	Uctenka *uctenky[10];
-	int pocetVydanychUctenek=0;
-	int citacld(){return rand() % 1000 + 1;}//pro generovani cisli uctenky
-		
-public:
-	Uctenka& vystavUctenku(double castka, double dph)
+	public:
+	Pokladna(int velikostPokladny) {
+		this->pocetVydanychUctenek = new Uctenka[velikostPokladny];
+		this-> citacld = 0;	
+	}
+	
+	Uctenka& vystavUctenku(double castka, double dph) 
 	{
-	*uctenky = new Uctenka();
-	uctenky[pocetVydanychUctenek] = new Uctenka(citacld(),castka,dph);
-	pocetVydanychUctenek++;
+	Uctenka uctenka = Uctenka(citacld, castka, dph);
+	pocetVydanychUctenek[citacld] = uctenka;
+	citacld++;
+	return pocetVydanychUctenek[citacld--];
 	}
 	
 	Uctenka& dejUctenku(int cisloUctenky)
 	{
-		for (int i = 0; i < *uctenky.length; i++)
+		for (int i = 0; i < citacld; i++)
 		{
-			if (*uctenky[i].getCisloUctenky == cisloUctenky)
+			if (*pocetVydanychUctenek[i].GetCisloUctenky == cisloUctenky)
 			{
-				return *uctenky[i];
+				return pocetVydanychUctenek[i];
 			}
-			else return *uctenky[0];
-		}
 
-	}
-	double dejCastku() const //nevim jake bude spravne?
-	{
-		int i = 0;
-		double temp;
-		std::for(double castka : *uctenky)
-		{
-			castka = 0;
-			temp = *uctenky[i].getCastka() + castka;
-			i++;
-				
 		}
-		delete i;
+		throw "uctenky neni";
+	return pocetVydanychUctenek[0];
+	}
+
+	double dejCastku() const 
+	{
+		double temp = 0;
+		for (int i = 0; i < citacld; i++)
+		{
+			temp += *pocetVydanychUctenek->GetCastku;
+		}
 		return temp;
 	}
+	
 	double DejCasktuVcDph() const 
 	{
-		int i = 0;
-		std::for (double castka : *uctenky)
+		double temp;
+		for (int i = 0; i<citacld;i++) 
 		{
-			castka = 0;
-			castka = castka + uctenky[i].getDph();
-			i++;
-			return castka;
+			temp += *pocetVydanychUctenek[i].GetCastku*(1 + pocetVydanychUctenek[i].GetDph);
 		}
-		delete i;
 	}
-
+private:
+	Uctenka* pocetVydanychUctenek;
+	int citacld;
 };
 #endif

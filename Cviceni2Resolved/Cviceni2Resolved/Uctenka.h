@@ -1,29 +1,33 @@
 #ifndef UCTENKA_H
 #define UCTENKA_H
 
-#include <iostream>
-
 class Uctenka
 {    
-private: //neni nutno nastaveno to automaticke
+public:
+	Uctenka(int aCisloUctenki, double aCastka, double aDph);
+	Uctenka();
+	void SetCastka(double aCastka) {
+		this->castka = aCastka;
+	}
+	void SetDph(double aDph) {
+		this->dph = aDph;
+	}
+	void SetCilsoUctenky(int cislo) {
+		this->cisloUctenky = cislo;
+	}
 
+	int GetCisloUctenky()const {
+		return cisloUctenky;
+	}
+	double GetCastku()const {
+		return castka;
+	}
+	double GetDph()const {
+		return dph;
+	}
+private:
 	int cisloUctenky;
-	std::double_t castka;
-	std::double_t dph;
-	~Uctenka() {} //smazat obejkt 
-public://metody pro cteni a nastaveni
-	
-	Uctenka(int aCisloUctenki,double aCastka, double aDph)
-	{cisloUctenky = aCisloUctenki; castka = aCastka; dph = aDph;}
-	Uctenka() {}
-	void setCastka(double aCastka){castka = aCastka;}
-	void setDph(double aDph){dph = aDph;}
-	void setCilsoUctenky(int cislo){cisloUctenky = cislo;}
-	
-	int getCisloUctenky(){return cisloUctenky;}
-	double getCastku(){return castka;}
-	double getDph(){return dph;}
-	void smazat(Uctenka *ptr){delete ptr;}
-	
+	double castka;
+	double dph; 
 };
 #endif
