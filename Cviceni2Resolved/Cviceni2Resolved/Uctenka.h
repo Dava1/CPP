@@ -1,33 +1,46 @@
 #ifndef UCTENKA_H
 #define UCTENKA_H
 
-class Uctenka
-{    
-public:
-	Uctenka(int aCisloUctenki, double aCastka, double aDph);
-	Uctenka();
-	void SetCastka(double aCastka) {
-		this->castka = aCastka;
-	}
-	void SetDph(double aDph) {
-		this->dph = aDph;
-	}
-	void SetCilsoUctenky(int cislo) {
-		this->cisloUctenky = cislo;
-	}
 
-	int GetCisloUctenky()const {
-		return cisloUctenky;
+struct Uctenka
+{
+public:	
+	Uctenka(int aCisloUctenki, double aCastka, double aDph) :numberOfTicket(aCisloUctenki),castka(aCastka),dph(aDph){}	
+	Uctenka() {}
+	~Uctenka() {}
+	
+	void SetCastka(double aCastka)
+	{
+		castka = aCastka;
 	}
-	double GetCastku()const {
+	
+	void SetDph(double aDph)
+	{
+		dph = aDph;
+	}
+	void SetCilsoUctenky(int cislo)
+	{
+		numberOfTicket = cislo;
+	}
+	
+	int GetCisloUctenky() const
+	{
+		return numberOfTicket;
+	}
+	
+	double GetCastku() const
+	{
 		return castka;
 	}
-	double GetDph()const {
+	
+	double GetDph() const
+	{
 		return dph;
 	}
-private:
-	int cisloUctenky;
+	
+private :
+	double dph;
 	double castka;
-	double dph; 
+	int numberOfTicket;
 };
 #endif

@@ -1,0 +1,7 @@
+﻿  Person.cpp
+  TelephonesNumberBook.cpp
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(29,33): error C3867: 'Entita::Person::GetId': non-standard syntax; use '&' to create a pointer to member
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(29,33): error C2446: '==': no conversion from 'int' to 'int (__thiscall Entita::Person::* )(void) const'
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(29,31): message : There are no conversions from integral values to pointer-to-member values
+  Generating Code...
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(56,26): error C3867: 'Model::NodeList::InsertToBegin': non-standard syntax; use '&' to create a pointer to member

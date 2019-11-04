@@ -5,6 +5,10 @@ Object::Object(int id)
 	this->id = id;
 }
 
+Object::~Object()
+{
+}
+
 int Object::GetId() const
 {
 	return id;

@@ -1,9 +1,11 @@
-
+#ifndef _STATIC_OBJECT_H
+#define _STATIC_OBJECT_H
 #include "Object.h"
 
 enum TypeOfBarriers {Rock,LittlePlant,BigPlant};
 
-class StaticObject : public Object {
+class StaticObject : public Object 
+{
 public:
 	StaticObject(int id, TypeOfBarriers TypeOfBarrieres);
 	~StaticObject();
@@ -12,3 +14,4 @@ public:
 private:
 	TypeOfBarriers typeOfBarriers;
 };
+#endif // !_STATIC_OBJECT_H

@@ -13,7 +13,7 @@ double MovingObject::GetAngleView() const
 
 void MovingObject::SetAngleView(double angleView)
 {
-	if (angleView > 2 * M_PI)
+	if (angleView > 0 && angleView < 2 * M_PI)
 	{
 		this->angleView = angleView;
 	}

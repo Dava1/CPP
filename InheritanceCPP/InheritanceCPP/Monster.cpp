@@ -1,6 +1,6 @@
 #include "Monster.h"
 
-Monster::Monster(int hp, int maxhp,double angleView):MovingObject(angleView)
+Monster::Monster(int hp, int maxhp,double angleView,int id):MovingObject(id,angleView)
 {
 	this->hp = hp;
 	this->maxHp = maxhp;
