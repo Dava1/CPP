@@ -2,10 +2,11 @@
 #define _OBJECT_H
 #include <string>
 
-class IObject
+struct IObject
 {
+public:
 	virtual ~IObject() {}
-	virtual std::string toString();
+	virtual std::string toString() const = 0;
 };
 #endif // !_OBJECT_H
 

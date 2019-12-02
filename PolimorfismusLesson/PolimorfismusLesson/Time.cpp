@@ -1,79 +1,67 @@
 #include "Time.h"
 
+
 Time::Time(int hours, int minutes, int seconds)
 {
-	if (hours >= 0 && hours < 23)
+	if (hours >= 0 && hours <= 23)
 	{
 		this->hours = hours;
 	}
-	if (minutes >= 0 && minutes <= 60)
+	else throw "Incorrect hours type";
+	if (minutes >= 0 && minutes <= 59)
 	{
 		this->minutes = minutes;
 	}
-	if (seconds >= 0 && seconds <= 60)
+	else throw "Incorrect minutes type";
+	if (seconds >= 0 && seconds <= 59)
 	{
 		this->seconds = seconds;
-	}
-	else throw " Uncorrect type of time";
+	}else throw " Uncorrect type of second type";
 }
 
 Time::~Time()
 {
 }
 
-int Time::compareTo(IComparable* object)
+int Time::compareTo(IComparable* object) const
 {
-	if (this->hours > dynamic_cast<Time*>(object)->GetHours() 
-	&& this->minutes > dynamic_cast<Time*>(object)->GetMinutes() 
-	&& this->seconds > dynamic_cast<Time*>(object)->GetSecunds())
+	if (dynamic_cast<Time*>(object))
 	{
-		return 1;
+		Time* time = static_cast<Time*>(object);
+		if (this->hours > time->hours)
+		{
+			return 1;
+		}
+		else if (this->hours == time->hours)
+		{
+			if (this->minutes > time->minutes)
+			{
+				return 1;
+			}
+			else if (this->minutes == time->minutes)
+			{
+				if (this->seconds > time->seconds)
+				{
+					return 1;
+				}
+				else if (this->seconds == time->seconds)
+				{
+					return 0;
+				}
+				else return -1;
+			}
+			else return -1;
+		}
+		else return -1;
 	}
-	if (this->hours < dynamic_cast<Time*>(object)->GetHours()
-	&& this->minutes < dynamic_cast<Time*>(object)->GetMinutes()
-	&& this->seconds < dynamic_cast<Time*>(object)->GetSecunds())
-	{
-		return -1;
-	}
-	else return 0;
+	else throw "Object doesn't possible campare!";
 }
 
-std::string Time::toString()
+std::string Time::toString() const
 {
-std::string str = hours + ":" + minutes;
-str += ":"+seconds;
-return str;
+return std::to_string(hours) + ":" + std::to_string(minutes) + ":" + std::to_string(seconds);
 }
 
-int Time::GetHours() const
-{
-	return hours;
-}
-
-int Time::GetMinutes() const
-{
-	return minutes;
-}
-
-int Time::GetSecunds() const
-{
-	return seconds;
-}
-
-void Time::SetHours(int hours)
-{
-	this->hours = hours;
-}
-
-void Time::SetMinutes(int minutes)
-{
-	this->seconds = seconds;
-}
-
-void Time::SetSeconds(int second)
-{
-	this->seconds = second;
-}
 
 
 

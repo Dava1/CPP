@@ -1,8 +1,2 @@
-﻿  IComparable.cpp
-  Time.cpp
-C:\Users\acer\source\repos\PolimorfismusLesson\PolimorfismusLesson\Time.h(4,7): warning C4594: class 'Time' can never be instantiated - indirect virtual base class 'IObject' is inaccessible
-C:\Users\acer\source\repos\PolimorfismusLesson\PolimorfismusLesson\IComparable.h(7,29): message : 'IObject' is a private base class of 'IComparable'
-C:\Users\acer\source\repos\PolimorfismusLesson\PolimorfismusLesson\Time.cpp(4,1): error C2248: 'IObject::~IObject': cannot access private member declared in class 'IObject'
-C:\Users\acer\source\repos\PolimorfismusLesson\PolimorfismusLesson\IObject.h(7): message : see declaration of 'IObject::~IObject'
-  Generating Code...
-C:\Users\acer\source\repos\PolimorfismusLesson\PolimorfismusLesson\IObject.h(5): message : see declaration of 'IObject'
+﻿  Time.cpp
+  PolimorfismusLesson.vcxproj -> C:\Users\acer\source\repos\PolimorfismusLesson\Debug\PolimorfismusLesson.exe

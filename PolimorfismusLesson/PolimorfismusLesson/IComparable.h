@@ -4,12 +4,11 @@
 
 
 
-class IComparable : virtual IObject
+struct  IComparable: public IObject
 {
 public:
 	virtual ~IComparable() {}
-	virtual int compareTo(IComparable* object);
-	virtual std::string toString() override;
+	virtual int compareTo(IComparable* object) const = 0;
 };
 
 #endif //!_ICOMPARABLE_H

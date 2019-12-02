@@ -1,19 +1,15 @@
 #ifndef _TIME_H
 #define _TIME_H
 #include "IComparable.h"
-class Time: virtual IComparable 
+
+struct Time : IComparable
 {
 public:
 	Time(int hours,int minutes,int seconds);
 	~Time();
-	virtual int compareTo(IComparable* object) override;
-	virtual std::string toString() override;
-	int GetHours() const;
-	int GetMinutes() const;
-	int GetSecunds() const;
-	void SetHours(int hours);
-	void SetMinutes(int minutes);
-	void SetSeconds(int second);
+	int compareTo(IComparable* object) const override;
+	std::string toString() const override;
+
 private :
 	int hours;
 	int minutes;
