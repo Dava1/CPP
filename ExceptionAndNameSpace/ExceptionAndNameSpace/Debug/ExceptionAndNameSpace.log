@@ -1,7 +1,15 @@
 ﻿  Person.cpp
   TelephonesNumberBook.cpp
-C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(29,33): error C3867: 'Entita::Person::GetId': non-standard syntax; use '&' to create a pointer to member
-C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(29,33): error C2446: '==': no conversion from 'int' to 'int (__thiscall Entita::Person::* )(void) const'
-C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(29,31): message : There are no conversions from integral values to pointer-to-member values
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(4,1): error C2512: 'Entita::Person': no appropriate default constructor available
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\Person.h(9,8): message : see declaration of 'Entita::Person'
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(73,45): error C3867: 'Entita::Person::GetName': non-standard syntax; use '&' to create a pointer to member
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(73,45): error C2678: binary '==': no operator found which takes a left-hand operand of type 'overloaded-function' (or there is no acceptable conversion)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\exception(282,24): message : could be 'bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &) noexcept' [found using argument-dependent lookup]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\exception(286,24): message : or       'bool std::operator ==(std::nullptr_t,const std::exception_ptr &) noexcept' [found using argument-dependent lookup]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\exception(290,24): message : or       'bool std::operator ==(const std::exception_ptr &,std::nullptr_t) noexcept' [found using argument-dependent lookup]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xstring(4333,17): message : or       'bool std::operator ==<char,std::char_traits<char>,std::allocator<char>>(const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &,const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &) noexcept'
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(73,45): message : while trying to match the argument list '(overloaded-function, std::string)'
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(90,41): error C3867: 'Entita::Person::GetId': non-standard syntax; use '&' to create a pointer to member
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(90,41): error C2446: '==': no conversion from 'int' to 'int (__thiscall Entita::Person::* )(void) const'
   Generating Code...
-C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(56,26): error C3867: 'Model::NodeList::InsertToBegin': non-standard syntax; use '&' to create a pointer to member
+C:\Users\acer\source\repos\ExceptionAndNameSpace\ExceptionAndNameSpace\TelephonesNumberBook.cpp(90,39): message : There are no conversions from integral values to pointer-to-member values

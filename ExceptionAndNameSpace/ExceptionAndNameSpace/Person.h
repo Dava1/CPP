@@ -1,7 +1,8 @@
 #ifndef _PERSON_H
 #define _PERSON_H
-#pragma once
 #include <string>
+
+
 
 namespace Entita 
 {

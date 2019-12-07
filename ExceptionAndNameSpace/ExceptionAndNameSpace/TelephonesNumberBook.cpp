@@ -1,67 +1,96 @@
 #include "TelephonesNumberBook.h"
 
-void Model::NodeList::InsertToBegin(Person newdata)
+Model::ElementList::ElementList(Entita::Person& person)
 {
-	Node* newNode = (struct Node*) malloc(sizeof(newNode));
-	newNode->data = newdata;
-	newNode->next = head;
-	head = newNode;
+	this->person = person;
+	this->next = nullptr;
 }
 
-std::string Model::NodeList::FindNode(std::string name)
+Model::ElementList::~ElementList()
 {
-	Node* iterator = head;
-	while (iterator->next == nullptr)
-	{
-		if (iterator->data.GetName() == name)
-		{
-			return iterator->data.GetTelephoneNumbers();
-		}
-		else throw "File nod found!";
-	}
 }
 
-std::string Model::NodeList::FindNodeForId(int id)
+Entita::Person* Model::ElementList::GetPerson()
 {
-	Node* iterator = head;
-	while (iterator->next == nullptr)
-	{
-		if (iterator->data.GetId == id)
-		{
-			return iterator->data.GetTelephoneNumbers();
-		}
-		else throw "File nod found!";
-	}
+	return &person;
 }
 
-void Model::NodeList::ClearList()
+Model::ElementList* Model::ElementList::GetNext() const
 {
-	Node* temp = head;
-	while (temp = nullptr) 
-	{
-		temp = temp->next;
-	}
+	return this->next;
 }
 
-Model::TelephonesNumbersBook::TelephonesNumbersBook()
+
+void Model::ElementList::SetNext(ElementList* next)
 {
+	this->next = next;
 }
 
 Model::TelephonesNumbersBook::~TelephonesNumbersBook()
 {
+	if (_head == nullptr)
+	{
+		delete _head;
+	}
+	else 
+	{
+	ElementList* iterator = _head;
+	while (iterator->GetNext() != nullptr)
+	{
+		ElementList* temprorary = iterator->GetNext();
+		delete iterator;
+		iterator = temprorary;
+	}
+	}
 }
 
-void Model::TelephonesNumbersBook::AddPerson(Person person)
+void Model::TelephonesNumbersBook::AddPerson(Entita::Person* person)
 {
-	_nodeList->InsertToBegin;
+	if(_head==nullptr)
+	{
+		_head = new ElementList(*person);
+	}
+	else
+	{
+		ElementList* temproty_element = _head;
+		while (temproty_element->GetNext()!=nullptr)
+		{
+			temproty_element = temproty_element->GetNext();
+		}
+		temproty_element->SetNext(new ElementList(*person));
+	}
 }
 
 std::string Model::TelephonesNumbersBook::LookTelephoneNumber(std::string name) const
 {
-	_nodeList->FindNode(name);
+	if (name == "")
+	{
+		throw std::invalid_argument("Empty argument");
+	}
+	ElementList* iterator = _head;
+	while (iterator->GetNext() != nullptr)
+	{
+		if (iterator->GetPerson()->GetName == name)
+		{
+			return iterator->GetPerson()->GetTelephoneNumbers();
+		}
+	}
+	throw "Number not found!";
 }
 
 std::string Model::TelephonesNumbersBook::LookTelephoneNumber(int id) const
 {
-	_nodeList->FindNodeForId(id);
+	if (id < 0)
+	{
+		throw std::invalid_argument("incorrect number!");
+	}
+	ElementList* iterator = _head;
+	while (iterator->GetNext() != nullptr)
+	{
+		if (iterator->GetPerson()->GetId == id)
+		{
+			return iterator->GetPerson()->GetTelephoneNumbers();
+		}
+	}
+	throw "Number not found!";
 }

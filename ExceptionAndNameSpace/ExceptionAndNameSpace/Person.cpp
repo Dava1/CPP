@@ -7,6 +7,7 @@ Entita::Person::Person(std::string name, std::string telephoneNumber, int id)
 	this->id = id;
 }
 
+
 Entita::Person::~Person()
 {
 }
