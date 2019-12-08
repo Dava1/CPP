@@ -26,8 +26,14 @@ int Address::GetPSC()
 	return psc;
 }
 
-std::ostream& operator<<(std::ostream& out, Address& address)
+std::ostream& operator<<(std::ostream& out,const Address& address)
 {
-out << address.GetStreet()<<", "<< address.GetCity()<<", "<< address.GetPSC()<<".";
+out << address._street<<", "<< address._city<<", "<< address.psc<<".";
 return out;
+}
+
+std::istream& operator>>(std::istream& in, Address& address)
+{
+	in >> address._street >> address._city >> address.psc;
+	return in;
 }

@@ -1,6 +1,7 @@
 #ifndef _DATE_H
 #define _DATE_H
-#pragma once
+#include <iostream>
+
 struct Date
 {
 private:
@@ -13,6 +14,8 @@ public:
 	int GetDay() const;
 	int GetYear() const;
 	int GetMonth() const;
+	friend std::ostream& operator<<(std::ostream& out,const Date& date);
+	friend std::istream& operator>>(std::istream& in, Date& date);
 };
 
 #endif // !_DATE_H

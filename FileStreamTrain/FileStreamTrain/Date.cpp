@@ -25,3 +25,13 @@ int Date::GetMonth() const
 {
 	return _month;
 }
+
+std::ostream& operator<<(std::ostream& out, const Date& date)
+{
+	return out << date._day << "," << date._month << "," << date._year;
+}
+
+std::istream& operator>>(std::istream& in, Date& date)
+{
+	return in >> date._day >> date._month >> date._year;
+}

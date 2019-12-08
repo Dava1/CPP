@@ -8,6 +8,10 @@ Person::Person(std::string _name, std::string _sername, Address* _address, Date*
 	this->_address = _address;
 }
 
+Person::Person()
+{
+}
+
 Person::~Person()
 {
 }
@@ -32,7 +36,12 @@ Date* Person::GetDate() const
 	return _date;
 }
 
-//ostream& Person::operator<<(ostream& os, const Person& object)
-//{
-//	os << object.re << " " << object.im;
-//}
+std::ostream& operator<<(std::ostream& out, const Person& person)
+{
+	return out << person._name << "," << person._sername << "," << person._address << "," << person._date;
+}
+
+std::istream& operator>>(std::istream& in, Person& person)
+{
+ return in >> person._name >> person._sername >> *person._address >> *person._date;
+}
